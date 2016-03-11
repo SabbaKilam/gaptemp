@@ -28,6 +28,8 @@ $(document).ready(runApplication);
 function runApplication(){
   //===Data===
   var backGroundColor = "hsl(189, 68%, 36%)";
+  var backGroundComplement = "hsl(10, 68%, 36%)"
+  var textColor = "hsl(189, 68%, 10%)"
   var _ = lib;
   var menuGap = 70;//percentage of opening
   var delay = 0.5;
@@ -87,15 +89,15 @@ function runApplication(){
     ;
     setTimeout(function(){
         _("#title")
-            .css("transition", "visibility"+ 5*delay +"s ease") 
+            .css("transition", "visibility"+ 5*delay +"s ease")
             .css("visibility","visible");          
     },delay*700);
   }
   //----
   function flashRedMenu(time){
-    _("#menu").css("color","hsl(10, 68%, 36%)");
+    _("#menu").css("color", backGroundComplement);
     setTimeout(function(){
-      _("#menu").css("color","black");      
+      _("#menu").css("color", textColor);      
     },1000*time);    
   }
 }
