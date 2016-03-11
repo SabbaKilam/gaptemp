@@ -1,0 +1,112 @@
+/*========================
+  Author: Abbas Abdulmalik
+  Creation Date: March 10, 2016
+  Title: KillingMe
+  Revised: 
+  Purpose: 
+  Note:
+  //-----------------
+  <body>
+    <div id="menuPanel" class="panel"></div>    
+    <div id="mainPanel" class="panel">
+      <div id="topBanner">
+        <span id="menu">&#9776;</span>
+        <span id="title">Title Goes Here</span>
+        <hr>
+      </div>
+    </div>
+    <div id="splashPanel" class="panel"></div>
+  <script src="main.js" class="panel"></script>        
+  </body>
+=========================*/
+html{
+  margin: 0;
+  padding:0;
+  width: 100%;
+  user-select: none;
+    overflow-x: hidden; 
+}
+body{
+  margin: 0;
+  padding:0;
+  width: 100%;
+  user-select: none;
+  overflow-x: hidden;   
+  
+}
+#mobileWrapper{
+  position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  overflow-x: hidden;  
+}
+
+.panel{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+}
+
+#menuPanel{
+  display: inline-block;
+  z-index: 0;
+  background: blue;
+
+}
+#topBanner{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  vertical-align: top;
+}
+#menu{ 
+  display: inline-block;
+  font-size: 1.7rem;
+  cursor: pointer;
+ 
+}
+
+#title{
+  font-size: 0.7rem;
+  padding-left: 5%;
+}
+#mainPanel{
+  z-index: 1;
+  background: white;
+  overflow-x: hidden;
+  text-align: center;
+  font-size: 0.5rem;
+  transition: left 10s ease;
+  overflow-x: hidden;
+  box-shadow: -10px 10px 30px black;    
+}
+#splashPanel{
+  z-index: 2;
+  background: red;
+  opacity: 1;
+  visibility: visible;
+  transition: all 3.5s linear;
+}
+table{
+  width: 100%;
+  margin-left: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
