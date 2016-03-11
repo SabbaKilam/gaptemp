@@ -28,17 +28,22 @@ $(document).ready(runApplication);
 function runApplication(){
   //===Data===
   var _ = lib;
-  var menuGap = 60;//percentage of opening
+  var menuGap = 70;//percentage of opening
   
   //===Driver's Seat===
   initialize();
+  
   _(window).on("resize", adjustRootEm);
   _("#menu").toggle(openMenu,closeMenu);
   
   //===Under The Hood===
-  function initialize(){    
+  function initialize(){     
     disolveSplashPanel();
     adjustRootEm();
+    //delay an introductory menu flash
+    setTimeout(function(){
+      flashRedMenu(0.5);      
+    },5000);     
     
     //----helpers----
     function disolveSplashPanel(){
@@ -50,10 +55,7 @@ function runApplication(){
 
   }//===END initialize()===
   function adjustRootEm(){
-    //delay an introductory meu flash
-    setTimeout(function(){
-      flashRedMenu(0.5);      
-    },5000);
+
 
     var size = 35 + window.innerWidth/64;
     _(document.documentElement).css("fontSize", size +"px");
@@ -71,7 +73,7 @@ function runApplication(){
   function closeMenu(){
     flashRedMenu(0.25);    
     _("#mainPanel")
-      .css("transition","left 0s ease")    
+      .css("transition","left 0.0s ease")    
       .css("left","0")
       .css("right","0")
       //.css("","")

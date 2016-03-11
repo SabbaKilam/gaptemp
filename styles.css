@@ -82,7 +82,7 @@ body{
   overflow-x: hidden;
   text-align: center;
   font-size: 0.5rem;
-  transition: left 10s ease;
+  transition: left 0.5s ease;
   overflow-x: hidden;
   box-shadow: -10px 10px 30px black;    
 }
