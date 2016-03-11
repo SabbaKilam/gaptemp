@@ -28,16 +28,19 @@ $(document).ready(runApplication);
 function runApplication(){
   //===Data===
   var backGroundColor = "hsl(189, 68%, 36%)";
-  var backGroundComplement = "hsl(10, 68%, 36%)"
-  var textColor = "hsl(189, 68%, 10%)"
+  var backGroundComplement = "hsl(10, 68%, 36%)";
+  var textColor = "hsl(189, 68%, 10%)";
   var _ = lib;
   var menuGap = 70;//percentage of opening
   var delay = 0.5;
   //===Driver's Seat===
-  initialize();
-  
+  initialize();  
   _(window).on("resize", adjustRootEm);
   _("#menu").toggle(openMenu,closeMenu);
+  _("#menuPanel").click(function(){
+      window.close();
+      //navigator.app.exitApp(); 
+  });
   
   //===Under The Hood===
   function initialize(){     
@@ -46,8 +49,7 @@ function runApplication(){
     //delay an introductory menu flash
     setTimeout(function(){
       flashRedMenu(0.5);      
-    },5000);     
-    
+    },5000);
     //----helpers----
     function disolveSplashPanel(){
       _("#splashPanel")
@@ -55,32 +57,28 @@ function runApplication(){
         .css("visibility","hidden")
       ;
     }
-
   }//===END initialize()===
   function adjustRootEm(){
-
-
     var size = 32 + window.innerWidth/55;
     _(document.documentElement).css("fontSize", size +"px");
   }
   //---
   function openMenu(){
     flashRedMenu(0.5);
-    _("#mainPanel")
-     
+    _("#mainPanel")     
       .css("transition", "left "+ delay +"s ease")
       .css("left",menuGap + "%")
       .css("right",-menuGap + "%")
       //.css("","")
     ;
     _("#title")
-        .css("transition", "all "+ delay +"s ease")     
+        .css("transition", "all "+ 0.5*delay +"s ease")     
         .css("visibility","hidden")
     ;    
   }
   //--------
   function closeMenu(){
-    flashRedMenu(0.25);    
+    flashRedMenu(0.5);    
     _("#mainPanel")
       .css("transition","left "+ delay +"s ease")   
       .css("left","0")
@@ -101,6 +99,7 @@ function runApplication(){
     },1000*time);    
   }
 }
+//===END of runApplication()===
 
 
 
