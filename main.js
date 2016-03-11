@@ -29,7 +29,7 @@ function runApplication(){
   //===Data===
   var _ = lib;
   var menuGap = 70;//percentage of opening
-  
+  var delay = 0.5;
   //===Driver's Seat===
   initialize();
   
@@ -64,20 +64,31 @@ function runApplication(){
   function openMenu(){
     flashRedMenu(0.5);
     _("#mainPanel")
-      .css("transition","left 0.5s ease")
+     
+      .css("transition", "left "+ delay +"s ease")
       .css("left",menuGap + "%")
       .css("right",-menuGap + "%")
       //.css("","")
+    ;
+    _("#title")
+        .css("transition", "all "+ delay +"s ease")     
+        .css("visibility","hidden")
     ;    
   }
+  //--------
   function closeMenu(){
     flashRedMenu(0.25);    
     _("#mainPanel")
-      .css("transition","left 0.0s ease")    
+      .css("transition","left "+ delay +"s ease")   
       .css("left","0")
       .css("right","0")
       //.css("","")
     ;
+    setTimeout(function(){
+        _("#title")
+            .css("transition", "visibility"+ 5*delay +"s ease") 
+            .css("visibility","visible");          
+    },delay*400);
   }
   //----
   function flashRedMenu(time){
