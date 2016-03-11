@@ -59,28 +59,40 @@ body{
 
 }
 #topBanner{
-  position: absolute;
+  position: relative;  
   left: 0;
   width: 100%;
+  height: 100px;
   text-align: left;
   vertical-align: top;
+}
+
+#divider{
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+    height: 2px;
+    background: hsl(189, 68%, 12%); 
+    box-shadow: 0 1px 0 hsl(189, 68%, 60%);    
 }
 #menu{ 
   display: inline-block;
   font-size: 1.7rem;
   padding-left: 5%;
   cursor: pointer;
- 
 }
 
 #title{
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   padding-right: 30%;
   visibility: visible;  
 }
+
 #mainPanel{
   z-index: 1;
-  background: white;
+  color: hsl(189, 68%, 10%);
+  background: hsl(189, 68%, 36%);
+  text-shadow: 0 1px 0 hsl(189, 68%, 60%);
   overflow-x: hidden;
   text-align: center;
   font-size: 0.5rem;
@@ -90,7 +102,7 @@ body{
 }
 #splashPanel{
   z-index: 2;
-  background: red;
+  background: hsl(10, 68%, 36%);
   opacity: 1;
   visibility: visible;
   transition: all 1.5s linear;
